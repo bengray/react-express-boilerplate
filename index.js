@@ -8,9 +8,24 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 // An api endpoint that returns a short list of items
 app.get('/api/getList', (req,res) => {
-    var list = ["item1", "item2", "item3"];
+    var list = [
+        {
+            id: '1',
+            name: 'phone 1',
+            description: 'great phone!'
+        },
+        {
+            id: '2',
+            name: 'phone 2',
+            description: 'mediocre phone!'
+        },
+        {
+            id: '3',
+            name: 'phone 3',
+            description: 'poor phone!'
+        }
+    ];
     res.json(list);
-    console.log('Sent list of items');
 });
 
 // Handles any requests that don't match the ones above
